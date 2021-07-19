@@ -1,0 +1,101 @@
+
+
+Car Rental Service 
+
+
+Swagger : http://localhost:9091/carrental/swagger-ui.html#/
+
+
+1 - Apis to Add a user and add a car in the system.
+●	/user => CRUDS
+	user-rest-controller ------User Rest Controller
+	add
+	get
+	del
+	edit	
+
+●	/cars => CRUDS
+	cars-rest-controller --- Cars Rest Controller
+	add
+	get
+	del
+	edit	
+
+2 - Given a time range, figure out which cars are available for that duration.
+	●	/search-cars  ---  rental-cars-controller :: Rental Cars Controller
+	API : /v1/rent/search-cars
+	request body :
+	{
+	  "basePriceMax": 200,
+	  "basePriceMin": 1,
+	  "depositMax": 100,
+	  "depositMin": 1,
+	  "endTime": "2021-07-29T12:10:27.891Z",
+	  "manufacturer": "Ford",
+	  "model": "F1-160",
+	  "pphMax": 100,
+	  "pphMin": 1,
+	  "startTime": "2021-07-26T12:10:27.891Z",
+	  "vehicleId": "KA01KA0101"
+	}
+	--- 
+	all above are search filters along with the start and end time
+
+3 - Given a time range calculate pricing for that car. 
+	●	/calculate-price
+    API :	/v1/cars/calculate-price  -- calculatePrice 
+    Controller: cars-rest-controller
+    input :
+    	fromDate
+    	toDateTime
+    	vehicleId
+     --- All are mandatory
+
+4 - Given a user a return list of all the cars he has booked along with their price and durations.
+	●	/user/bookings
+	API : /v1/user/bookings   -- getBookings
+	Controller : user-rest-controller 
+	input:
+		mobileNumber : unique identification of user
+
+5 - Given a Car return a list of users who have booked the car along with their durations.
+	●	/car/bookings
+	API : /v1/cars/bookings  -- getFutureBookings
+	Controller : cars-rest-controller
+	input:
+    	vehicleId
+
+6 - To book a car for certain durations.
+●	car/book 
+	API : /v1/rent/
+	Controller : rental-cars-controller
+	input : 
+	{
+	  "carId": 
+	  "endTime": "2021-07-18T14:11:46.562Z",
+	  "startTime": "2021-07-18T14:11:46.562Z",
+	  "userId": 
+	}
+
+Optional Features
+1 - authentication or authorization logics  -- No 
+2 - Creating a UI for the above Apis -- yes
+3 - Providing Search-cars with different types of filters. --  yes 
+4 - hosting everything on the cloud services --  DB on cloud atlas , need ip to allow
+
+
+
+₹
+
+
+
+
+
+
+
+
+
+
+
+
+

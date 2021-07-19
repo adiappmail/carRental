@@ -1,0 +1,25 @@
+server:
+  servlet:
+    context-path: /carrental
+  port: 9091
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb://aditya:aditya123@aditya.cofgr.mongodb.net/carRental?retryWrites=true&w=majority
+      repositories:
+        enabled: true
+#spring:
+#  data:
+#    mongodb:
+#      database: carRental
+#      host: aditya.cofgr.mongodb.net
+#      port: 27017
+#      user:
+#
+#
+#      uri=mongodb://user:secret@mongo1:
+#        example:
+#          com:12345,mongo2:
+#            example:
+#              com:23456/test:

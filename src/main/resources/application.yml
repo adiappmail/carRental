@@ -1,0 +1,11 @@
+server:
+  servlet:
+    context-path: /carrental
+  port: 9091
+
+spring:
+  data:
+    mongodb:
+      database: carRental
+      host: localhost
+      port: 27017

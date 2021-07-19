@@ -1,0 +1,29 @@
+package com.refyne.carRental.dto;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
+
+import java.math.BigDecimal;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class CarDto {
+
+    String vehicleId;
+
+    String manufacturer;
+
+    String model;
+
+    BigDecimal basePrice;
+
+    BigDecimal pph;
+
+    BigDecimal deposit;
+
+}
